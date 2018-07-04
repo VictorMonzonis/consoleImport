@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "import": {
+      "commandName": "Project",
+      "commandLineArgs": "-h"
+    }
+  }
+}
