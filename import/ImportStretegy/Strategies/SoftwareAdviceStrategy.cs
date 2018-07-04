@@ -1,11 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using static import.ImportStretegy.ImportContext;
-using static import.ImportStretegy.Strategies.CapterraStrategy;
 
 namespace import.ImportStretegy.Strategies
 {

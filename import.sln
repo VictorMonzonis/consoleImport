@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "import", "import\import.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{9FFF953F-717D-41FF-8792-4029EB0C4CE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "import.Strategy.CapterraTests", "import.Strategy.CapterraTests\import.Strategy.CapterraTests.csproj", "{A7610D78-2F3F-4A0F-B0BE-3BD06EED54C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "import.Strategy.UnitTests", "import.Strategy.CapterraTests\import.Strategy.UnitTests.csproj", "{A7610D78-2F3F-4A0F-B0BE-3BD06EED54C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3960350D-A915-4C49-9F78-609662753B60}"
 	ProjectSection(SolutionItems) = preProject

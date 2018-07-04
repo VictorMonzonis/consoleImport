@@ -1,7 +1,6 @@
 using import.ImportStretegy.Strategies;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
-using System.Linq;
 using static import.ImportStretegy.Strategies.CapterraStrategy;
 
 namespace import.Strategy.CapterraTests

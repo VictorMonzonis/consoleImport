@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using import.ImportStretegy;
-using Microsoft.Extensions.Configuration;
 
 namespace import
 {
