@@ -1,38 +1,62 @@
-Requirements make it work:
-	Option 1: (Any System)
-	To run it from .core framework, install dotNet core 2.1 which is cross platform to luch it
+____________________________		
+TO RUN THE CODE:
+
+	Option 1: (Any System + .net core needed)
+	To run it from .core framework, install dotNet core 2.1 which is cross platform
 	    $> dotnet import.dll -h  (h: for help)
 		$> dotnet import.dll -c capterra|softadvice -f filepath [-v:Verbosity]
 
 		cd C:\Users\vmonzon\source\repos\import\import\bin\Debug\netcoreapp2.1>
 		$> dotnet import -c capterra|softadvice -f filepath [-v:Verbosity]
 	
-	Optoin 2 (Pick up the bin you need from)
+	Optoin 2 (Pick up the bin you need from, witout .net core install)
 	To run it  without .net core framework in the folder "import\import\bin\Debug\netcoreapp2.1"
-		you can see a foler call ubuntu.16.04-x64, from ubutu you can run the software (Idem for osx.10.11-x64)
+		you can see a specific platforms folders, for Linux, mac and Windows e.g ubuntu.16.04-x64, osx.10.11-x64, win10-x64. Get inside until you reach the 'import' file then
 			$> import -c capterra|softadvice -f filepath [-v:Verbosity]		
 
-		Note: To compile the source for Ubuntu/Mac etc be in the import.project folder and execute (.net core 2.1 nedded, as the bin are given should no be needed)
+		Note: You can compile the source for Ubuntu/Mac etc be in the import.project folder and execute (as the bin are given should no be needed)
 		   $> dotnet build --runtime ubuntu.16.04-x64	
 
-  import -h (for help)
+		   
+Help to use the command
+$> import -h
+  
+____________________________		
+RUN THE TESTS:
 
+  To Run the Steps:
+	Option 1: (VS)
+		Open the test explorer and run the test.
+		
+	Option 2: (From shell)
+		Go to the test project cd import\import.Strategy.CapterraTests
+		import\import.Strategy.CapterraTests> dotnet test		
+____________________________		
+CODE SUMMARY:
+
+We have add a Strategy pattern in order to allow new importers in the future.
 
 The capterra import:
-	- supports lazy loading
+	- Supports lazy loading
 	- it should work with big files
+	- Notice: The callback at the import function could be tune to return a boolean and decide when to stop, with that we could get the Iterator  funtionalitty.
 
 The SoftwareAdvice
-   - eager loading
-   - it could break with a certan size of the files because reads the file in once.
-
-Considerations:
-   - Basic test coverage, the unit test trust in physical files, a nice improve would be the use of DI insted of oblight at the use of the FS.
-   - We have add a Strategy pattern in order to allow new  importers in the future.
+   - Eager loading
+   - It could break with a certan size of the files because it is read at once. 
+   I decided that implementation for simplicity.
 
 To Improve(next steps):
-   - The import returns IEnumerable<dynamic> to not get typed at eny format, and to allow the lazy loading functionality.
-   - The Lazy loading has been implemented using Callbacks because the was an issue with .net yield and the indirect call of the stratygy pattern.
-   It would be nice improve the callback to another better aproach.
-   - Improve the error handling is quite basic.
-   I 
+   - Implement the Iterator pattern for the importers, it would be nice stop the importing when business logic says. Doing the bool callback(dataSlice) ...
+   - Basic unit test coverage, the unit test trust in physical files, a nice improve would be the use of DI service insted of an embeded access to a file system in the strategy implementation.
+   - Troubles using yield operator with IEnumerable<object>, (Something to investigate, it another implementation to get the Iterator pattern and lazy loading).
+   - Improve the error handling the current one is too basic. 
+   - The softadvice could be improve to parse each element one by one if the need of big files pops up. Pass from eager loading to a lazy loading aproach.
+____________________________
+QUESTIONS: 
+ - Was it your first time writing a unit test, using a particular framework, etc?
+ It wasn't my first time, I've usually test at unit test and integration level. I've used Moq, RhinoMock for the UnitTest levels, NUnit, MsTest and Jasmine as test frameworks.
+ 
+ - What would you have done differently if you had had more time
+	In the code summary (to improve section)
+
